@@ -26,7 +26,7 @@
     .matrix-table {
       width: 100%;
       border-collapse: collapse;
-      table-layout: fixed; /* ensures cells are same width */
+      table-layout: fixed; /* Ensures all cells are the same width */
     }
     .matrix-table th,
     .matrix-table td {
@@ -34,16 +34,25 @@
       padding: 0.75rem;
       text-align: left;
       overflow: hidden;
-      text-overflow: ellipsis;
       white-space: nowrap;
+      position: relative; /* Needed for tooltip positioning */
     }
     .matrix-table th {
       background-color: #f4f4f4;
     }
-    /* Set a minimum height for cells */
-    .matrix-table td {
-      min-height: 50px;
-      cursor: pointer;
+    /* Tooltip styling using :hover and the data-fulltext attribute */
+    .matrix-table td[data-fulltext]:hover::after {
+      content: attr(data-fulltext);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 5px;
+      white-space: normal;
+      z-index: 100;
+      width: 300px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     }
     /* Pastel background colors for each work package */
     .wp-1 { background-color: #AEDFF7; }
@@ -55,63 +64,31 @@
     .wp-7 { background-color: #AEF7D6; }
     .wp-8 { background-color: #F7AEAE; }
     .wp-9 { background-color: #EAEAEA; }
-    /* Modal styling */
-    .modal {
-      display: none; /* hidden by default */
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
-    .modal-content {
-      background-color: #fff;
-      margin: 10% auto;
-      padding: 1rem;
-      border: 1px solid #888;
-      width: 80%;
-      max-width: 600px;
-      position: relative;
-    }
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #aaa;
-      cursor: pointer;
-    }
-    .close-btn:hover {
-      color: #000;
-    }
-    /* Responsive design adjustments */
+    /* Responsive adjustments */
     @media screen and (max-width: 768px) {
       .matrix-table th, .matrix-table td {
         font-size: 0.9rem;
         padding: 0.5rem;
       }
+      .matrix-table td[data-fulltext]:hover::after {
+        width: 200px;
+      }
     }
   </style>
 </head>
 <body>
-  <!-- Header section -->
+  <!-- Header -->
   <header>
     <h1>Arctic PASSION Deliverables Matrix</h1>
   </header>
   
-  <!-- Main content area -->
+  <!-- Main Content -->
   <main>
-    <!-- Brief note on data source -->
     <p>Data derived from deliverables document :contentReference[oaicite:1]{index=1}</p>
-    <!-- Matrix Table -->
     <table class="matrix-table">
       <thead>
         <tr>
-          <th>Deliverable</th>
+          <th>Deliverable (No. & Keywords)</th>
           <th>Legacy Value</th>
           <th>Key Recommendations</th>
           <th>Next Step</th>
@@ -119,106 +96,163 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Example rows for Work Package 1 -->
+        <!-- Work Package 1 -->
         <tr class="wp-1">
-          <td data-fulltext="Deliverable D1.1: Report on Missing Elements for an Improved Arctic Observing System">
-            D1.1
+          <td data-fulltext="D1.1: Report on Missing Elements for an Improved Arctic Observing System - Identifies gaps in structure and strategy.">
+            D1.1: Missing Elements
           </td>
-          <td data-fulltext="Identifies structural gaps and provides a foundation for future investments">
+          <td data-fulltext="Provides a foundation by identifying structural gaps and thematic issues, setting the stage for future investments.">
             Gaps, Foundation
           </td>
-          <td data-fulltext="Disseminate findings; organize stakeholder workshops; institutionalize recommendations">
+          <td data-fulltext="Disseminate findings; organize stakeholder workshops; institutionalize recommendations into future roadmaps.">
             Disseminate, Workshops, Institutionalize
           </td>
-          <td data-fulltext="Host a thematic session during the next Arctic Observing Summit">
+          <td data-fulltext="Host a thematic session at the next Arctic Observing Summit to discuss actionable responses.">
             Host Summit Session
           </td>
-          <td data-fulltext="SAON, EPCO, Arctic Council working groups, EU Polar Cluster partners">
+          <td data-fulltext="SAON, EPCO, Arctic Council working groups, EU Polar Cluster partners.">
             SAON, EPCO, Arctic Council
           </td>
         </tr>
         <tr class="wp-1">
-          <td data-fulltext="Deliverable D1.2: Definition for the Pilot Set of Essential Arctic Variables (EAV/SAVs)">
-            D1.2
+          <td data-fulltext="D1.2: Definition for the Pilot Set of Essential Arctic Variables (EAV/SAVs) - Establishes standardized guidelines.">
+            D1.2: EAV/SAVs
           </td>
-          <td data-fulltext="Sets foundational guidelines for consistent Arctic observations">
-            Foundational, Guidelines
+          <td data-fulltext="Sets foundational guidelines ensuring consistent, standardized observations critical for integrated Arctic monitoring.">
+            Guidelines, Standardization
           </td>
-          <td data-fulltext="Engage key institutions; update definitions regularly; institutionalize guidelines">
-            Engage, Update, Institutionalize
+          <td data-fulltext="Engage key institutions; update definitions regularly; integrate guidelines into monitoring frameworks.">
+            Engage, Update, Integrate
           </td>
-          <td data-fulltext="Organize an international expert workshop">
+          <td data-fulltext="Organize an international expert workshop to validate and adopt the proposed variables.">
             Organize Workshop
           </td>
-          <td data-fulltext="SAON, WMO, SIOS">
+          <td data-fulltext="SAON, WMO, SIOS, Indigenous organizations.">
             SAON, WMO, SIOS
           </td>
         </tr>
-        <!-- Example row for Work Package 2 -->
+        <tr class="wp-1">
+          <td data-fulltext="D1.3: Website with Protocols, Planning, and Reporting Tools - Central digital collaboration platform.">
+            D1.3: Web Platform
+          </td>
+          <td data-fulltext="Facilitates long-term collaboration by centralizing protocols, planning, and reporting for Arctic observations.">
+            Centralized, Collaborative
+          </td>
+          <td data-fulltext="Ensure secure hosting; promote stakeholder adoption; formalize maintenance partnerships.">
+            Secure, Promote, Formalize
+          </td>
+          <td data-fulltext="Secure sustainable funding and technical resources for long-term operation.">
+            Secure Funding
+          </td>
+          <td data-fulltext="NPI, SAON, EU Polar Cluster, Arctic research community.">
+            NPI, SAON, EU Polar Cluster
+          </td>
+        </tr>
+        <tr class="wp-1">
+          <td data-fulltext="D1.4: Reports on WMO GTS Datasets - Enhances data access for non-GTS users.">
+            D1.4: WMO GTS Reports
+          </td>
+          <td data-fulltext="Improves access to real-time observational data for a broader user base outside traditional networks.">
+            Accessibility, Real-time Data
+          </td>
+          <td data-fulltext="Disseminate technical documentation; promote awareness; facilitate training on data access.">
+            Disseminate, Train, Promote
+          </td>
+          <td data-fulltext="Develop a public data access interface hosted by a trusted Arctic institution.">
+            Develop Interface
+          </td>
+          <td data-fulltext="METNO, WMO, national meteorological institutes.">
+            METNO, WMO
+          </td>
+        </tr>
+        <tr class="wp-1">
+          <td data-fulltext="D1.6: FRM Surface Temperature Datasets and Recommendations - Provides quality-controlled climate data.">
+            D1.6: FRM Datasets
+          </td>
+          <td data-fulltext="Ensures availability of uncertainty-characterized datasets crucial for climate monitoring and integration.">
+            Quality, Climate Data
+          </td>
+          <td data-fulltext="Integrate datasets into operational frameworks; promote methodological adoption; conduct capacity-building workshops.">
+            Integrate, Promote, Train
+          </td>
+          <td data-fulltext="Formally integrate datasets into global data services like Copernicus Climate Change Service.">
+            Integrate Globally
+          </td>
+          <td data-fulltext="C3S, WMO, DMI, national meteorological services.">
+            C3S, WMO, DMI
+          </td>
+        </tr>
+        <tr class="wp-1">
+          <td data-fulltext="D1.7: New Near-Real-Time Data and Time Series from Drifting Observatories - Enhances continuous monitoring.">
+            D1.7: Drifting Observatories
+          </td>
+          <td data-fulltext="Delivers continuous, real-time observations vital for monitoring rapid environmental changes.">
+            Continuous, Real-time
+          </td>
+          <td data-fulltext="Secure funding; integrate data streams into operational systems; expand observatory networks.">
+            Fund, Integrate, Expand
+          </td>
+          <td data-fulltext="Establish formal partnerships for sustained funding and logistical support.">
+            Establish Partnerships
+          </td>
+          <td data-fulltext="NPI, ESA, SAON, maritime organizations.">
+            NPI, ESA, SAON
+          </td>
+        </tr>
+        <tr class="wp-1">
+          <td data-fulltext="D1.8: Roadmap for Future Long-Term Arctic Observing System - Strategic guidance for evolving observation systems.">
+            D1.8: Arctic Roadmap
+          </td>
+          <td data-fulltext="Outlines comprehensive evolution measures, guiding future investment and long-term sustainability.">
+            Strategic, Guiding
+          </td>
+          <td data-fulltext="Disseminate roadmap widely; convene strategic workshops; integrate recommendations into policy frameworks.">
+            Disseminate, Convene, Integrate
+          </td>
+          <td data-fulltext="Present and promote the roadmap at key international forums (e.g., Arctic Science Ministerial).">
+            Present at Forums
+          </td>
+          <td data-fulltext="SAON, EU Polar Cluster, national Arctic institutions, Indigenous organizations.">
+            SAON, EU Polar Cluster
+          </td>
+        </tr>
+        <!-- Work Package 2 -->
         <tr class="wp-2">
-          <td data-fulltext="Deliverable D2.1: Data Management Plan (living document revised annually)">
-            D2.1
+          <td data-fulltext="D2.1: Data Management Plan - Living document ensuring sustainable, structured data management.">
+            D2.1: DMP
           </td>
-          <td data-fulltext="Ensures consistent, sustainable, and interoperable data management">
-            Consistent, Sustainable
+          <td data-fulltext="Ensures interoperability and long-term sustainable management of Arctic data.">
+            Sustainable, Structured
           </td>
-          <td data-fulltext="Engage stakeholders; integrate best practices; formalize adoption">
+          <td data-fulltext="Engage stakeholders; integrate best practices; formalize adoption of the DMP.">
             Engage, Integrate, Formalize
           </td>
-          <td data-fulltext="Organize a dedicated workshop with ADC and SAON">
+          <td data-fulltext="Organize a workshop with ADC and SAON to adopt the DMP.">
             Organize Workshop
           </td>
-          <td data-fulltext="FMI, SAON, ADC">
+          <td data-fulltext="FMI, SAON, ADC.">
             FMI, SAON, ADC
           </td>
         </tr>
-        <!-- Additional rows for other work packages would follow here -->
-      </tbody>
-    </table>
-  </main>
-  
-  <!-- Footer section -->
-  <footer>
-    <p>&copy; 2025 Arctic PASSION Horizon 2020 Project</p>
-  </footer>
-  
-  <!-- Modal for displaying full cell content -->
-  <div id="modal" class="modal" role="dialog" aria-modal="true">
-    <div class="modal-content">
-      <span class="close-btn" id="closeBtn" aria-label="Close">&times;</span>
-      <div id="modalText"></div>
-    </div>
-  </div>
-  
-  <!-- JavaScript for modal functionality -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const modal = document.getElementById('modal');
-      const modalText = document.getElementById('modalText');
-      const closeBtn = document.getElementById('closeBtn');
-      
-      // Attach click events to all cells with a data-fulltext attribute
-      const cells = document.querySelectorAll('.matrix-table td[data-fulltext]');
-      cells.forEach(function(cell) {
-        cell.addEventListener('click', function() {
-          const fullText = this.getAttribute('data-fulltext');
-          modalText.textContent = fullText;
-          modal.style.display = 'block';
-        });
-      });
-      
-      // Close the modal when the close button is clicked
-      closeBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-      });
-      
-      // Close the modal when clicking outside the modal content
-      window.addEventListener('click', function(event) {
-        if (event.target === modal) {
-          modal.style.display = 'none';
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+        <tr class="wp-2">
+          <td data-fulltext="D2.2: Report on Interoperability Status of Copernicus Services - Evaluation of data integration.">
+            D2.2: Interoperability Report
+          </td>
+          <td data-fulltext="Highlights current capabilities and gaps in data interoperability within Copernicus services.">
+            Evaluation, Gaps
+          </td>
+          <td data-fulltext="Regular updates; engage EU institutions; implement recommended improvements.">
+            Update, Engage, Improve
+          </td>
+          <td data-fulltext="Present recommendations at an EU Polar Cluster meeting.">
+            Present Recommendations
+          </td>
+          <td data-fulltext="ECMWF, ESA, METNO.">
+            ECMWF, ESA, METNO
+          </td>
+        </tr>
+        <tr class="wp-2">
+          <td data-fulltext="D2.3: Website with Data Information and FAIRified Dataset Updates - Centralized data portal.">
+            D2.3: Data Website
+          </td>
+          <td data-fulltext="Centralizes access
