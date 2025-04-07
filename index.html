@@ -26,21 +26,26 @@
     .matrix-table {
       width: 100%;
       border-collapse: collapse;
-      table-layout: fixed; /* Ensures all cells are the same width */
+      table-layout: fixed;
     }
     .matrix-table th,
     .matrix-table td {
       border: 1px solid #ccc;
       padding: 0.75rem;
       text-align: left;
-      overflow: hidden;
-      white-space: nowrap;
-      position: relative; /* Needed for tooltip positioning */
+      position: relative; /* For tooltip positioning */
     }
     .matrix-table th {
       background-color: #f4f4f4;
     }
-    /* Tooltip styling using :hover and the data-fulltext attribute */
+    /* Truncated text styling for cell content */
+    .cell-text {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    /* Tooltip styling using hover */
     .matrix-table td[data-fulltext]:hover::after {
       content: attr(data-fulltext);
       position: absolute;
@@ -88,7 +93,7 @@
     <table class="matrix-table">
       <thead>
         <tr>
-          <th>Deliverable (No. & Keywords)</th>
+          <th>Deliverable (No. &amp; Keywords)</th>
           <th>Legacy Value</th>
           <th>Key Recommendations</th>
           <th>Next Step</th>
@@ -98,161 +103,819 @@
       <tbody>
         <!-- Work Package 1 -->
         <tr class="wp-1">
-          <td data-fulltext="D1.1: Report on Missing Elements for an Improved Arctic Observing System - Identifies gaps in structure and strategy.">
-            D1.1: Missing Elements
+          <td data-fulltext="D1.1: Report on Missing Elements for an Improved Arctic Observing System – Identifies gaps in structure and strategy.">
+            <span class="cell-text">D1.1: Missing Elements</span>
           </td>
           <td data-fulltext="Provides a foundation by identifying structural gaps and thematic issues, setting the stage for future investments.">
-            Gaps, Foundation
+            <span class="cell-text">Gaps, Foundation</span>
           </td>
           <td data-fulltext="Disseminate findings; organize stakeholder workshops; institutionalize recommendations into future roadmaps.">
-            Disseminate, Workshops, Institutionalize
+            <span class="cell-text">Disseminate, Workshops, Institutionalize</span>
           </td>
           <td data-fulltext="Host a thematic session at the next Arctic Observing Summit to discuss actionable responses.">
-            Host Summit Session
+            <span class="cell-text">Host Summit Session</span>
           </td>
           <td data-fulltext="SAON, EPCO, Arctic Council working groups, EU Polar Cluster partners.">
-            SAON, EPCO, Arctic Council
+            <span class="cell-text">SAON, EPCO, Arctic Council</span>
           </td>
         </tr>
         <tr class="wp-1">
-          <td data-fulltext="D1.2: Definition for the Pilot Set of Essential Arctic Variables (EAV/SAVs) - Establishes standardized guidelines.">
-            D1.2: EAV/SAVs
+          <td data-fulltext="D1.2: Definition for the Pilot Set of Essential Arctic Variables (EAV/SAVs) – Establishes standardized guidelines.">
+            <span class="cell-text">D1.2: EAV/SAVs</span>
           </td>
           <td data-fulltext="Sets foundational guidelines ensuring consistent, standardized observations critical for integrated Arctic monitoring.">
-            Guidelines, Standardization
+            <span class="cell-text">Guidelines, Standardization</span>
           </td>
           <td data-fulltext="Engage key institutions; update definitions regularly; integrate guidelines into monitoring frameworks.">
-            Engage, Update, Integrate
+            <span class="cell-text">Engage, Update, Integrate</span>
           </td>
           <td data-fulltext="Organize an international expert workshop to validate and adopt the proposed variables.">
-            Organize Workshop
+            <span class="cell-text">Organize Workshop</span>
           </td>
           <td data-fulltext="SAON, WMO, SIOS, Indigenous organizations.">
-            SAON, WMO, SIOS
+            <span class="cell-text">SAON, WMO, SIOS</span>
           </td>
         </tr>
         <tr class="wp-1">
-          <td data-fulltext="D1.3: Website with Protocols, Planning, and Reporting Tools - Central digital collaboration platform.">
-            D1.3: Web Platform
+          <td data-fulltext="D1.3: Website with Protocols, Planning, and Reporting Tools – Central digital collaboration platform.">
+            <span class="cell-text">D1.3: Web Platform</span>
           </td>
           <td data-fulltext="Facilitates long-term collaboration by centralizing protocols, planning, and reporting for Arctic observations.">
-            Centralized, Collaborative
+            <span class="cell-text">Centralized, Collaborative</span>
           </td>
           <td data-fulltext="Ensure secure hosting; promote stakeholder adoption; formalize maintenance partnerships.">
-            Secure, Promote, Formalize
+            <span class="cell-text">Secure, Promote, Formalize</span>
           </td>
           <td data-fulltext="Secure sustainable funding and technical resources for long-term operation.">
-            Secure Funding
+            <span class="cell-text">Secure Funding</span>
           </td>
           <td data-fulltext="NPI, SAON, EU Polar Cluster, Arctic research community.">
-            NPI, SAON, EU Polar Cluster
+            <span class="cell-text">NPI, SAON, EU Polar Cluster</span>
           </td>
         </tr>
         <tr class="wp-1">
-          <td data-fulltext="D1.4: Reports on WMO GTS Datasets - Enhances data access for non-GTS users.">
-            D1.4: WMO GTS Reports
+          <td data-fulltext="D1.4: Reports on WMO GTS Datasets – Enhances data access for non-GTS users.">
+            <span class="cell-text">D1.4: WMO GTS Reports</span>
           </td>
           <td data-fulltext="Improves access to real-time observational data for a broader user base outside traditional networks.">
-            Accessibility, Real-time Data
+            <span class="cell-text">Accessibility, Real-time Data</span>
           </td>
           <td data-fulltext="Disseminate technical documentation; promote awareness; facilitate training on data access.">
-            Disseminate, Train, Promote
+            <span class="cell-text">Disseminate, Train, Promote</span>
           </td>
           <td data-fulltext="Develop a public data access interface hosted by a trusted Arctic institution.">
-            Develop Interface
+            <span class="cell-text">Develop Interface</span>
           </td>
           <td data-fulltext="METNO, WMO, national meteorological institutes.">
-            METNO, WMO
+            <span class="cell-text">METNO, WMO</span>
           </td>
         </tr>
         <tr class="wp-1">
-          <td data-fulltext="D1.6: FRM Surface Temperature Datasets and Recommendations - Provides quality-controlled climate data.">
-            D1.6: FRM Datasets
+          <td data-fulltext="D1.6: FRM Surface Temperature Datasets and Recommendations – Provides quality-controlled climate data.">
+            <span class="cell-text">D1.6: FRM Datasets</span>
           </td>
           <td data-fulltext="Ensures availability of uncertainty-characterized datasets crucial for climate monitoring and integration.">
-            Quality, Climate Data
+            <span class="cell-text">Quality, Climate Data</span>
           </td>
           <td data-fulltext="Integrate datasets into operational frameworks; promote methodological adoption; conduct capacity-building workshops.">
-            Integrate, Promote, Train
+            <span class="cell-text">Integrate, Promote, Train</span>
           </td>
-          <td data-fulltext="Formally integrate datasets into global data services like Copernicus Climate Change Service.">
-            Integrate Globally
+          <td data-fulltext="Formally integrate datasets into global data services like the Copernicus Climate Change Service.">
+            <span class="cell-text">Integrate Globally</span>
           </td>
           <td data-fulltext="C3S, WMO, DMI, national meteorological services.">
-            C3S, WMO, DMI
+            <span class="cell-text">C3S, WMO, DMI</span>
           </td>
         </tr>
         <tr class="wp-1">
-          <td data-fulltext="D1.7: New Near-Real-Time Data and Time Series from Drifting Observatories - Enhances continuous monitoring.">
-            D1.7: Drifting Observatories
+          <td data-fulltext="D1.7: New Near-Real-Time Data and Time Series from Drifting Observatories – Enhances continuous monitoring.">
+            <span class="cell-text">D1.7: Drifting Observatories</span>
           </td>
           <td data-fulltext="Delivers continuous, real-time observations vital for monitoring rapid environmental changes.">
-            Continuous, Real-time
+            <span class="cell-text">Continuous, Real-time</span>
           </td>
           <td data-fulltext="Secure funding; integrate data streams into operational systems; expand observatory networks.">
-            Fund, Integrate, Expand
+            <span class="cell-text">Fund, Integrate, Expand</span>
           </td>
           <td data-fulltext="Establish formal partnerships for sustained funding and logistical support.">
-            Establish Partnerships
+            <span class="cell-text">Establish Partnerships</span>
           </td>
           <td data-fulltext="NPI, ESA, SAON, maritime organizations.">
-            NPI, ESA, SAON
+            <span class="cell-text">NPI, ESA, SAON</span>
           </td>
         </tr>
         <tr class="wp-1">
-          <td data-fulltext="D1.8: Roadmap for Future Long-Term Arctic Observing System - Strategic guidance for evolving observation systems.">
-            D1.8: Arctic Roadmap
+          <td data-fulltext="D1.8: Roadmap for Future Long-Term Arctic Observing System – Strategic guidance for evolving observation systems.">
+            <span class="cell-text">D1.8: Arctic Roadmap</span>
           </td>
           <td data-fulltext="Outlines comprehensive evolution measures, guiding future investment and long-term sustainability.">
-            Strategic, Guiding
+            <span class="cell-text">Strategic, Guiding</span>
           </td>
           <td data-fulltext="Disseminate roadmap widely; convene strategic workshops; integrate recommendations into policy frameworks.">
-            Disseminate, Convene, Integrate
+            <span class="cell-text">Disseminate, Convene, Integrate</span>
           </td>
           <td data-fulltext="Present and promote the roadmap at key international forums (e.g., Arctic Science Ministerial).">
-            Present at Forums
+            <span class="cell-text">Present at Forums</span>
           </td>
           <td data-fulltext="SAON, EU Polar Cluster, national Arctic institutions, Indigenous organizations.">
-            SAON, EU Polar Cluster
+            <span class="cell-text">SAON, EU Polar Cluster</span>
           </td>
         </tr>
         <!-- Work Package 2 -->
         <tr class="wp-2">
-          <td data-fulltext="D2.1: Data Management Plan - Living document ensuring sustainable, structured data management.">
-            D2.1: DMP
+          <td data-fulltext="D2.1: Data Management Plan – Living document ensuring sustainable, structured data management.">
+            <span class="cell-text">D2.1: DMP</span>
           </td>
           <td data-fulltext="Ensures interoperability and long-term sustainable management of Arctic data.">
-            Sustainable, Structured
+            <span class="cell-text">Sustainable, Structured</span>
           </td>
           <td data-fulltext="Engage stakeholders; integrate best practices; formalize adoption of the DMP.">
-            Engage, Integrate, Formalize
+            <span class="cell-text">Engage, Integrate, Formalize</span>
           </td>
           <td data-fulltext="Organize a workshop with ADC and SAON to adopt the DMP.">
-            Organize Workshop
+            <span class="cell-text">Organize Workshop</span>
           </td>
           <td data-fulltext="FMI, SAON, ADC.">
-            FMI, SAON, ADC
+            <span class="cell-text">FMI, SAON, ADC</span>
           </td>
         </tr>
         <tr class="wp-2">
-          <td data-fulltext="D2.2: Report on Interoperability Status of Copernicus Services - Evaluation of data integration.">
-            D2.2: Interoperability Report
+          <td data-fulltext="D2.2: Report on Interoperability Status of Copernicus Services – Evaluation of data integration.">
+            <span class="cell-text">D2.2: Interoperability Report</span>
           </td>
           <td data-fulltext="Highlights current capabilities and gaps in data interoperability within Copernicus services.">
-            Evaluation, Gaps
+            <span class="cell-text">Evaluation, Gaps</span>
           </td>
           <td data-fulltext="Regular updates; engage EU institutions; implement recommended improvements.">
-            Update, Engage, Improve
+            <span class="cell-text">Update, Engage, Improve</span>
           </td>
           <td data-fulltext="Present recommendations at an EU Polar Cluster meeting.">
-            Present Recommendations
+            <span class="cell-text">Present Recommendations</span>
           </td>
           <td data-fulltext="ECMWF, ESA, METNO.">
-            ECMWF, ESA, METNO
+            <span class="cell-text">ECMWF, ESA, METNO</span>
           </td>
         </tr>
         <tr class="wp-2">
-          <td data-fulltext="D2.3: Website with Data Information and FAIRified Dataset Updates - Centralized data portal.">
-            D2.3: Data Website
+          <td data-fulltext="D2.3: Website with Data Information and FAIRified Dataset Updates – Centralized data portal.">
+            <span class="cell-text">D2.3: Data Website</span>
           </td>
-          <td data-fulltext="Centralizes access
+          <td data-fulltext="Centralizes access to Arctic data, promoting FAIR principles and reuse.">
+            <span class="cell-text">Centralized, FAIR</span>
+          </td>
+          <td data-fulltext="Maintain collaboration with data providers; institutionalize website updates; ensure accessibility.">
+            <span class="cell-text">Collaborate, Update, Accessible</span>
+          </td>
+          <td data-fulltext="Establish a long-term hosting agreement with SAON or ADC.">
+            <span class="cell-text">Secure Hosting</span>
+          </td>
+          <td data-fulltext="METNO, SAON, ADC.">
+            <span class="cell-text">METNO, SAON, ADC</span>
+          </td>
+        </tr>
+        <tr class="wp-2">
+          <td data-fulltext="D2.4: Synthesis Reports on the Status of Arctic Data System – Evaluates current data capabilities.">
+            <span class="cell-text">D2.4: Synthesis Reports</span>
+          </td>
+          <td data-fulltext="Provides essential updates on Arctic data systems, identifying strengths and gaps.">
+            <span class="cell-text">Evaluative, Insightful</span>
+          </td>
+          <td data-fulltext="Ensure periodic updates; integrate findings into national strategies; communicate results.">
+            <span class="cell-text">Update, Integrate, Communicate</span>
+          </td>
+          <td data-fulltext="Organize a handover meeting with SAON and ADC for regular synthesis updates.">
+            <span class="cell-text">Organize Handover</span>
+          </td>
+          <td data-fulltext="AMAP, ADC, SAON.">
+            <span class="cell-text">AMAP, ADC, SAON</span>
+          </td>
+        </tr>
+        <tr class="wp-2">
+          <td data-fulltext="D2.5: Updated Mapping of the Arctic Data System – Overview of data sources and accessibility.">
+            <span class="cell-text">D2.5: Data Mapping</span>
+          </td>
+          <td data-fulltext="Enhances transparency and strategic planning by mapping available Arctic data.">
+            <span class="cell-text">Overview, Transparent</span>
+          </td>
+          <td data-fulltext="Regular updates; integrate mapping outcomes into decision-making tools; engage key institutions.">
+            <span class="cell-text">Update, Integrate, Engage</span>
+          </td>
+          <td data-fulltext="Transfer mapping responsibilities to SAON and ADC for continuous updates.">
+            <span class="cell-text">Transfer Responsibility</span>
+          </td>
+          <td data-fulltext="AMAP, ADC, SAON.">
+            <span class="cell-text">AMAP, ADC, SAON</span>
+          </td>
+        </tr>
+        <tr class="wp-2">
+          <td data-fulltext="D2.6: MeteoIO Docker Image and OGC WPS Service – Standardized toolset for data processing.">
+            <span class="cell-text">D2.6: MeteoIO Toolset</span>
+          </td>
+          <td data-fulltext="Ensures uniform, interoperable processing of Arctic meteorological and related data.">
+            <span class="cell-text">Standardized, Interoperable</span>
+          </td>
+          <td data-fulltext="Promote adoption; institutionalize through training; integrate into operational frameworks.">
+            <span class="cell-text">Adopt, Train, Integrate</span>
+          </td>
+          <td data-fulltext="Provide training sessions for SAON-affiliated data centers and Copernicus operators.">
+            <span class="cell-text">Conduct Training</span>
+          </td>
+          <td data-fulltext="WSL/SLF, METNO, SAON.">
+            <span class="cell-text">WSL/SLF, METNO, SAON</span>
+          </td>
+        </tr>
+        <tr class="wp-2">
+          <td data-fulltext="D2.7: Final Report on Number of Long-term Preserved Datasets – Ensures data continuity.">
+            <span class="cell-text">D2.7: Preservation Report</span>
+          </td>
+          <td data-fulltext="Safeguards historical data continuity by formalizing long-term preservation strategies.">
+            <span class="cell-text">Preservation, Continuity</span>
+          </td>
+          <td data-fulltext="Develop preservation strategies; integrate with global frameworks; secure long-term funding.">
+            <span class="cell-text">Strategize, Integrate, Fund</span>
+          </td>
+          <td data-fulltext="Establish a formal long-term preservation agreement with recognized Arctic data repositories.">
+            <span class="cell-text">Establish Agreement</span>
+          </td>
+          <td data-fulltext="AWI (PANGAEA), FMI, EOSC, SAON.">
+            <span class="cell-text">AWI, FMI, EOSC</span>
+          </td>
+        </tr>
+        <!-- Work Package 3 -->
+        <tr class="wp-3">
+          <td data-fulltext="D3.2: Roadmap for optimal sensor network for monitoring EAV/SAVs for land ice – Sensor network planning for land ice monitoring.">
+            <span class="cell-text">D3.2: Sensor Network Roadmap</span>
+          </td>
+          <td data-fulltext="Provides a strategic framework for integrating satellite and in-situ sensor data to monitor land ice.">
+            <span class="cell-text">Strategic, Integrative</span>
+          </td>
+          <td data-fulltext="Engage international stakeholders; align with satellite missions; integrate with existing frameworks.">
+            <span class="cell-text">Engage, Align, Integrate</span>
+          </td>
+          <td data-fulltext="Convene an international workshop to review and formalize the sensor network roadmap.">
+            <span class="cell-text">Convene Workshop</span>
+          </td>
+          <td data-fulltext="ESA, NASA, SAON, EPB, NPI, AWI.">
+            <span class="cell-text">ESA, NASA, SAON</span>
+          </td>
+        </tr>
+        <!-- Work Package 4 -->
+        <tr class="wp-4">
+          <td data-fulltext="D4.1: Lake Ice Service Readiness Report – Assesses feasibility for Arctic lake ice monitoring.">
+            <span class="cell-text">D4.1: Lake Ice Readiness</span>
+          </td>
+          <td data-fulltext="Evaluates the readiness of an Arctic lake ice monitoring service, crucial for safety and ecological assessments.">
+            <span class="cell-text">Feasibility, Safety</span>
+          </td>
+          <td data-fulltext="Integrate with national services; promote stakeholder consultations; formalize integration into operational systems.">
+            <span class="cell-text">Integrate, Consult, Formalize</span>
+          </td>
+          <td data-fulltext="Organize consultations with national ice services to integrate the service into forecasting systems.">
+            <span class="cell-text">Organize Consultations</span>
+          </td>
+          <td data-fulltext="SYKE, FMI, METNO.">
+            <span class="cell-text">SYKE, FMI, METNO</span>
+          </td>
+        </tr>
+        <tr class="wp-4">
+          <td data-fulltext="D4.2: Disturbance Map for Pan-Arctic (Permafrost Thawing) – Visual tool for tracking permafrost thaw.">
+            <span class="cell-text">D4.2: Permafrost Map</span>
+          </td>
+          <td data-fulltext="Provides critical visualization of permafrost thawing trends for research and emergency planning.">
+            <span class="cell-text">Visual, Critical</span>
+          </td>
+          <td data-fulltext="Integrate with international databases; secure continuous updates; engage local communities.">
+            <span class="cell-text">Integrate, Update, Engage</span>
+          </td>
+          <td data-fulltext="Secure long-term hosting via a partnership with SAON and ESA CCI programs.">
+            <span class="cell-text">Secure Hosting</span>
+          </td>
+          <td data-fulltext="AWI, SAON, ESA CCI+.">
+            <span class="cell-text">AWI, SAON</span>
+          </td>
+        </tr>
+        <tr class="wp-4">
+          <td data-fulltext="D4.3: Documentation on INFRA Service Functionalities – Details on Integrated Fire Risk Management.">
+            <span class="cell-text">D4.3: INFRA Documentation</span>
+          </td>
+          <td data-fulltext="Ensures clear understanding of INFRA’s operational functionalities for replication in emergency management.">
+            <span class="cell-text">Clear, Operational</span>
+          </td>
+          <td data-fulltext="Engage working groups; conduct stakeholder workshops; promote adoption in emergency protocols.">
+            <span class="cell-text">Engage, Workshop, Adopt</span>
+          </td>
+          <td data-fulltext="Conduct workshops with CAFF, EPPR, and Copernicus EFFIS to integrate INFRA functionalities.">
+            <span class="cell-text">Conduct Workshops</span>
+          </td>
+          <td data-fulltext="CNR, CAFF, EPPR, Copernicus EFFIS.">
+            <span class="cell-text">CNR, CAFF, EPPR</span>
+          </td>
+        </tr>
+        <tr class="wp-4">
+          <td data-fulltext="D4.4: Regional Sea Ice Information Tool – Provides region-specific sea ice data and forecasts.">
+            <span class="cell-text">D4.4: Sea Ice Tool</span>
+          </td>
+          <td data-fulltext="Fills a gap in regional sea ice monitoring by providing detailed forecasts for shipping, fisheries, and communities.">
+            <span class="cell-text">Regional, Detailed</span>
+          </td>
+          <td data-fulltext="Align tool data with CMEMS; institutionalize under national services; secure operational funding.">
+            <span class="cell-text">Align, Institutionalize, Fund</span>
+          </td>
+          <td data-fulltext="Negotiate a formal hosting agreement between METNO/NPI and Copernicus Marine Service.">
+            <span class="cell-text">Negotiate Agreement</span>
+          </td>
+          <td data-fulltext="METNO, NPI, CMEMS.">
+            <span class="cell-text">METNO, NPI, CMEMS</span>
+          </td>
+        </tr>
+        <tr class="wp-4">
+          <td data-fulltext="D4.5: Development of Community Event Databases and Stakeholder Workshops – Integrates indigenous and local knowledge.">
+            <span class="cell-text">D4.5: Community Databases</span>
+          </td>
+          <td data-fulltext="Bridges science and indigenous knowledge, enhancing inclusive and holistic Arctic monitoring.">
+            <span class="cell-text">Inclusive, Holistic</span>
+          </td>
+          <td data-fulltext="Embed within SDWG; secure long-term funding; promote active community participation.">
+            <span class="cell-text">Embed, Fund, Participate</span>
+          </td>
+          <td data-fulltext="Host a legacy planning workshop with SDWG, indigenous groups, and research organizations.">
+            <span class="cell-text">Host Workshop</span>
+          </td>
+          <td data-fulltext="Snowchange, SDWG, Indigenous organizations.">
+            <span class="cell-text">Snowchange, SDWG</span>
+          </td>
+        </tr>
+        <tr class="wp-4">
+          <td data-fulltext="D4.6: New Local Baseline Data on Marine Climate and Noisescape – Establishes baseline for marine ecosystem monitoring.">
+            <span class="cell-text">D4.6: Marine Baseline</span>
+          </td>
+          <td data-fulltext="Provides critical baseline data on marine ecosystems, informing future ecological management and community adaptation.">
+            <span class="cell-text">Baseline, Ecosystem</span>
+          </td>
+          <td data-fulltext="Embed observations in national programs; host stakeholder workshops; ensure continuous data updates.">
+            <span class="cell-text">Embed, Workshop, Update</span>
+          </td>
+          <td data-fulltext="Organize a stakeholder workshop to commit to ongoing marine climate observations.">
+            <span class="cell-text">Organize Workshop</span>
+          </td>
+          <td data-fulltext="GINR, AMAP, local Greenland communities.">
+            <span class="cell-text">GINR, AMAP</span>
+          </td>
+        </tr>
+        <tr class="wp-4">
+          <td data-fulltext="D4.7: GTN-P Permafrost Observing Best Practices for WMO Guide – Establishes standard monitoring protocols.">
+            <span class="cell-text">D4.7: Permafrost Best Practices</span>
+          </td>
+          <td data-fulltext="Sets globally recognized protocols for permafrost monitoring, ensuring consistency across Arctic research.">
+            <span class="cell-text">Standardized, Global</span>
+          </td>
+          <td data-fulltext="Promote adoption by GTN-P and WMO; formalize standardization; conduct training for monitoring agencies.">
+            <span class="cell-text">Adopt, Standardize, Train</span>
+          </td>
+          <td data-fulltext="Submit best practices for formal endorsement by WMO and GTN-P.">
+            <span class="cell-text">Submit for Endorsement</span>
+          </td>
+          <td data-fulltext="AWI, GTN-P, WMO.">
+            <span class="cell-text">AWI, GTN-P, WMO</span>
+          </td>
+        </tr>
+        <tr class="wp-4">
+          <td data-fulltext="D4.9: 'State of the Arctic Environment' Website – Central portal showcasing Arctic indicators.">
+            <span class="cell-text">D4.9: Arctic Environment Site</span>
+          </td>
+          <td data-fulltext="Acts as a comprehensive portal for critical Arctic environmental indicators accessible to policymakers and communities.">
+            <span class="cell-text">Comprehensive, Accessible</span>
+          </td>
+          <td data-fulltext="Establish sustainable funding; create a clear governance model; promote multi-party collaborations.">
+            <span class="cell-text">Fund, Govern, Collaborate</span>
+          </td>
+          <td data-fulltext="Develop and formalize an MoU outlining long-term hosting and operational commitments.">
+            <span class="cell-text">Formalize MoU</span>
+          </td>
+          <td data-fulltext="NPI, SAON, AMAP, EPCO.">
+            <span class="cell-text">NPI, SAON, AMAP</span>
+          </td>
+        </tr>
+        <tr class="wp-4">
+          <td data-fulltext="D4.10: Lake Ice Service Expansion and Utilization Report – Expands geographical and functional coverage.">
+            <span class="cell-text">D4.10: Lake Ice Expansion</span>
+          </td>
+          <td data-fulltext="Increases safety and monitoring capabilities across Nordic Arctic regions through service expansion.">
+            <span class="cell-text">Expansion, Safety</span>
+          </td>
+          <td data-fulltext="Negotiate agreements with national services; secure operational funding; integrate into forecasting systems.">
+            <span class="cell-text">Negotiate, Fund, Integrate</span>
+          </td>
+          <td data-fulltext="Negotiate and formalize operational integration with existing Arctic forecasting programs.">
+            <span class="cell-text">Formalize Integration</span>
+          </td>
+          <td data-fulltext="SYKE, FMI, METNO, Nordic communities.">
+            <span class="cell-text">SYKE, FMI, METNO</span>
+          </td>
+        </tr>
+        <tr class="wp-4">
+          <td data-fulltext="D4.11: Main Findings of the Event Database – Synthesizes indigenous knowledge into actionable insights.">
+            <span class="cell-text">D4.11: Event Database Findings</span>
+          </td>
+          <td data-fulltext="Translates community-based data into critical insights for policy and regional adaptation strategies.">
+            <span class="cell-text">Synthesis, Actionable</span>
+          </td>
+          <td data-fulltext="Embed findings into policy frameworks; facilitate handover to SDWG; communicate outcomes widely.">
+            <span class="cell-text">Embed, Handover, Communicate</span>
+          </td>
+          <td data-fulltext="Organize a briefing to formally present findings to policy forums.">
+            <span class="cell-text">Organize Briefing</span>
+          </td>
+          <td data-fulltext="Snowchange, SDWG, AMAP.">
+            <span class="cell-text">Snowchange, SDWG</span>
+          </td>
+        </tr>
+        <tr class="wp-4">
+          <td data-fulltext="D4.12: Report on Operational Tests and Performance of INFRA Setup – Evaluates wildfire risk management systems.">
+            <span class="cell-text">D4.12: INFRA Performance</span>
+          </td>
+          <td data-fulltext="Demonstrates INFRA’s operational capability and applicability in real-world wildfire management scenarios.">
+            <span class="cell-text">Evaluative, Applicable</span>
+          </td>
+          <td data-fulltext="Integrate outcomes with EU and Arctic emergency management; conduct stakeholder workshops; refine protocols.">
+            <span class="cell-text">Integrate, Workshop, Refine</span>
+          </td>
+          <td data-fulltext="Host workshops with emergency management agencies to integrate INFRA into operational protocols.">
+            <span class="cell-text">Host Workshops</span>
+          </td>
+          <td data-fulltext="CNR, CEMS, EPPR, local authorities.">
+            <span class="cell-text">CNR, CEMS, EPPR</span>
+          </td>
+        </tr>
+        <tr class="wp-4">
+          <td data-fulltext="D4.13: Model Description and Forecast Delivery for Local Atmospheric Pollution – Enhances air quality monitoring.">
+            <span class="cell-text">D4.13: Pollution Forecast Model</span>
+          </td>
+          <td data-fulltext="Improves monitoring accuracy for atmospheric pollution, critical for public health and policy.">
+            <span class="cell-text">Accurate, Health-focused</span>
+          </td>
+          <td data-fulltext="Integrate with CAMS; negotiate operational ownership; secure ongoing funding and technical support.">
+            <span class="cell-text">Integrate, Negotiate, Fund</span>
+          </td>
+          <td data-fulltext="Negotiate with CAMS and European Environment Agency to formalize operational ownership.">
+            <span class="cell-text">Negotiate Ownership</span>
+          </td>
+          <td data-fulltext="JRC, CAMS, European Environment Agency.">
+            <span class="cell-text">JRC, CAMS</span>
+          </td>
+        </tr>
+        <tr class="wp-4">
+          <td data-fulltext="D4.14: Operational POLARIS Service – Provides real-time information for Arctic shipping safety.">
+            <span class="cell-text">D4.14: POLARIS Service</span>
+          </td>
+          <td data-fulltext="Enhances maritime safety by delivering real-time ice condition information to reduce risk.">
+            <span class="cell-text">Real-time, Safety</span>
+          </td>
+          <td data-fulltext="Institutionalize within IMO/Copernicus frameworks; finalize partnership agreements; ensure continued funding.">
+            <span class="cell-text">Institutionalize, Partner, Fund</span>
+          </td>
+          <td data-fulltext="Finalize partnership agreements with maritime safety authorities and transition operations accordingly.">
+            <span class="cell-text">Finalize Partnerships</span>
+          </td>
+          <td data-fulltext="AWI, METNO, IMO, maritime industry.">
+            <span class="cell-text">AWI, METNO, IMO</span>
+          </td>
+        </tr>
+        <!-- Work Package 5 -->
+        <tr class="wp-5">
+          <td data-fulltext="D5.1: Description of a Versatile Benefit Assessment Approach and Arctic Resilience Societal Indicators – Evaluates societal impacts.">
+            <span class="cell-text">D5.1: Benefit Assessment</span>
+          </td>
+          <td data-fulltext="Clarifies how Arctic observations contribute to societal resilience through structured evaluation.">
+            <span class="cell-text">Evaluative, Resilience</span>
+          </td>
+          <td data-fulltext="Integrate with SAON ROADS; engage funding agencies; embed indicators into monitoring frameworks.">
+            <span class="cell-text">Integrate, Engage, Embed</span>
+          </td>
+          <td data-fulltext="Organize stakeholder workshops to embed the benefit assessment approach into evaluation frameworks.">
+            <span class="cell-text">Organize Workshops</span>
+          </td>
+          <td data-fulltext="JRC, SAON, Arctic Council working groups.">
+            <span class="cell-text">JRC, SAON</span>
+          </td>
+        </tr>
+        <tr class="wp-5">
+          <td data-fulltext="D5.2: Toolset for Estimating Societal Benefits to Strengthen Arctic Resilience – Provides a practical evaluation toolkit.">
+            <span class="cell-text">D5.2: Benefit Toolset</span>
+          </td>
+          <td data-fulltext="Enables detailed estimation of economic and social benefits derived from Arctic observation systems.">
+            <span class="cell-text">Practical, Evaluative</span>
+          </td>
+          <td data-fulltext="Integrate toolset within operational frameworks; develop training programs; promote widespread adoption.">
+            <span class="cell-text">Integrate, Train, Promote</span>
+          </td>
+          <td data-fulltext="Conduct training sessions and webinars for stakeholders and Arctic communities.">
+            <span class="cell-text">Conduct Training</span>
+          </td>
+          <td data-fulltext="FMI, SAON, EU Polar Cluster.">
+            <span class="cell-text">FMI, SAON</span>
+          </td>
+        </tr>
+        <tr class="wp-5">
+          <td data-fulltext="D5.3: Evaluation of Benefit Generation Potential of the Pilot Services – Assesses economic and societal impacts.">
+            <span class="cell-text">D5.3: Benefit Evaluation</span>
+          </td>
+          <td data-fulltext="Provides comprehensive evaluation insights into the value proposition of maintaining pilot services.">
+            <span class="cell-text">Comprehensive, Impactful</span>
+          </td>
+          <td data-fulltext="Advocate sustained funding; integrate evaluation into SAON ROADS; formalize continuous benefit analysis.">
+            <span class="cell-text">Advocate, Integrate, Formalize</span>
+          </td>
+          <td data-fulltext="Conduct a formal briefing to inform long-term funding and operational decisions.">
+            <span class="cell-text">Conduct Briefing</span>
+          </td>
+          <td data-fulltext="FMI, SAON, Arctic Council working groups.">
+            <span class="cell-text">FMI, SAON</span>
+          </td>
+        </tr>
+        <!-- Work Package 6 -->
+        <tr class="wp-6">
+          <td data-fulltext="D6.1: Instigate a new Task Group on Observations in the EU Polar Cluster – Establishes permanent collaboration.">
+            <span class="cell-text">D6.1: Task Group</span>
+          </td>
+          <td data-fulltext="Creates lasting collaboration within the EU Polar Cluster for standardized observation methodologies.">
+            <span class="cell-text">Collaboration, Standardization</span>
+          </td>
+          <td data-fulltext="Institutionalize the task group; update tasks regularly; integrate with existing observation initiatives.">
+            <span class="cell-text">Institutionalize, Update, Integrate</span>
+          </td>
+          <td data-fulltext="Organize a handover meeting with EU Polar Cluster members to formalize the task group.">
+            <span class="cell-text">Organize Meeting</span>
+          </td>
+          <td data-fulltext="UKRI-BAS, EU Polar Cluster.">
+            <span class="cell-text">UKRI-BAS, EU Polar Cluster</span>
+          </td>
+        </tr>
+        <tr class="wp-6">
+          <td data-fulltext="D6.2: GEO/EuroGEO Advocation Progress in Arctic Issues to EO Community – Increases global recognition.">
+            <span class="cell-text">D6.2: GEO Advocation</span>
+          </td>
+          <td data-fulltext="Promotes Arctic observation needs within global GEO/EuroGEO frameworks for increased awareness.">
+            <span class="cell-text">Global, Recognition</span>
+          </td>
+          <td data-fulltext="Maintain active role in GEO; develop structured dialogue; capture evolving stakeholder requirements.">
+            <span class="cell-text">Maintain, Dialogue, Capture</span>
+          </td>
+          <td data-fulltext="Formalize an 'Arctic liaison' role in GEO governance structures.">
+            <span class="cell-text">Formalize Liaison</span>
+          </td>
+          <td data-fulltext="AMAP, SAON, GEO.">
+            <span class="cell-text">AMAP, SAON, GEO</span>
+          </td>
+        </tr>
+        <tr class="wp-6">
+          <td data-fulltext="D6.3: Report on SAON Progress in Arctic Issues to EO Community – Summarizes advancements and integration efforts.">
+            <span class="cell-text">D6.3: SAON Progress</span>
+          </td>
+          <td data-fulltext="Documents advancements in Arctic observation integration and data interoperability achieved by SAON.">
+            <span class="cell-text">Advancements, Integration</span>
+          </td>
+          <td data-fulltext="Embed findings into SAON ROADS; update progress reports annually; ensure transparency.">
+            <span class="cell-text">Embed, Update, Transparent</span>
+          </td>
+          <td data-fulltext="Integrate key recommendations into SAON’s strategic planning and annual reports.">
+            <span class="cell-text">Integrate Strategically</span>
+          </td>
+          <td data-fulltext="SAON Secretariat, AMAP, Arctic Council groups.">
+            <span class="cell-text">SAON, AMAP</span>
+          </td>
+        </tr>
+        <tr class="wp-6">
+          <td data-fulltext="D6.6: Report on Activities and Status of Cooperation with non-EU Partners – Establishes international collaborations.">
+            <span class="cell-text">D6.6: Non-EU Cooperation</span>
+          </td>
+          <td data-fulltext="Establishes a clear baseline of international partnerships, enhancing the project's global impact.">
+            <span class="cell-text">International, Collaborative</span>
+          </td>
+          <td data-fulltext="Formalize long-term agreements; maintain active collaboration channels; update partnerships regularly.">
+            <span class="cell-text">Formalize, Maintain, Update</span>
+          </td>
+          <td data-fulltext="Initiate a partnership working group within SAON for long-term international collaboration.">
+            <span class="cell-text">Initiate Working Group</span>
+          </td>
+          <td data-fulltext="AMAP, UKRI-BAS, international partners.">
+            <span class="cell-text">AMAP, UKRI-BAS</span>
+          </td>
+        </tr>
+        <tr class="wp-6">
+          <td data-fulltext="D6.7: GEO Initiative Report for Arctic GEOSS – Outlines strategic contributions within GEOSS.">
+            <span class="cell-text">D6.7: GEOSS Report</span>
+          </td>
+          <td data-fulltext="Highlights Arctic PASSION’s role in shaping Arctic GEOSS, ensuring long-term recognition and coordination.">
+            <span class="cell-text">Strategic, GEOSS</span>
+          </td>
+          <td data-fulltext="Submit formal proposals; use GEOSS for continued advocacy; coordinate with SAON for ongoing engagement.">
+            <span class="cell-text">Propose, Advocate, Coordinate</span>
+          </td>
+          <td data-fulltext="Submit and advocate for formal recognition of Arctic-GEOSS as an official GEO Initiative.">
+            <span class="cell-text">Submit Proposal</span>
+          </td>
+          <td data-fulltext="AMAP, SAON, GEO.">
+            <span class="cell-text">AMAP, SAON, GEO</span>
+          </td>
+        </tr>
+        <!-- Work Package 7 -->
+        <tr class="wp-7">
+          <td data-fulltext="D7.1: Report on Arctic PASSION Activities and Recommendations for Sustained Observations – Strategic guidance for future policy.">
+            <span class="cell-text">D7.1: PASSION Report</span>
+          </td>
+          <td data-fulltext="Provides strategic recommendations for sustaining and enhancing Arctic observations at national and international levels.">
+            <span class="cell-text">Strategic, Guiding</span>
+          </td>
+          <td data-fulltext="Integrate with funding strategies; engage with decision-makers; align with international policy frameworks.">
+            <span class="cell-text">Integrate, Engage, Align</span>
+          </td>
+          <td data-fulltext="Incorporate recommendations into ongoing funding strategies via the Forum of Arctic Research Funders.">
+            <span class="cell-text">Incorporate Strategically</span>
+          </td>
+          <td data-fulltext="Forum of Arctic Research Funders, IASC, SAON.">
+            <span class="cell-text">Forum of ARF, IASC</span>
+          </td>
+        </tr>
+        <tr class="wp-7">
+          <td data-fulltext="D7.2: Policy Brief for Sub-national Decision-makers – Concise guidance for local/regional authorities.">
+            <span class="cell-text">D7.2: Policy Brief (Sub-national)</span>
+          </td>
+          <td data-fulltext="Offers actionable recommendations to enhance local governance and resilience using Arctic data.">
+            <span class="cell-text">Actionable, Local</span>
+          </td>
+          <td data-fulltext="Embed briefs in regional frameworks; promote evidence-based decision-making; secure formal adoption.">
+            <span class="cell-text">Embed, Promote, Adopt</span>
+          </td>
+          <td data-fulltext="Adopt recommendations through the Arctic Mayors’ Forum and regional governance bodies.">
+            <span class="cell-text">Adopt Recommendations</span>
+          </td>
+          <td data-fulltext="Local decision-makers, Arctic Mayors’ Forum.">
+            <span class="cell-text">Local Authorities</span>
+          </td>
+        </tr>
+        <tr class="wp-7">
+          <td data-fulltext="D7.5: Report of Briefing Meeting to Inform MEPs and European Officials – Enhances EU-level awareness.">
+            <span class="cell-text">D7.5: MEP Briefing Report</span>
+          </td>
+          <td data-fulltext="Links scientific evidence to EU policy, supporting informed policymaking on Arctic issues.">
+            <span class="cell-text">EU-focused, Informative</span>
+          </td>
+          <td data-fulltext="Institutionalize regular briefings; collaborate with Horizon projects; maintain dialogue with EU officials.">
+            <span class="cell-text">Institutionalize, Collaborate, Maintain</span>
+          </td>
+          <td data-fulltext="Establish a legacy dialogue channel for ongoing contact with MEPs and EU departments.">
+            <span class="cell-text">Establish Dialogue</span>
+          </td>
+          <td data-fulltext="EPCO, EU Polar Board, Horizon Arctic projects.">
+            <span class="cell-text">EPCO, EU PB</span>
+          </td>
+        </tr>
+        <tr class="wp-7">
+          <td data-fulltext="D7.6: Policy Brief for Sub-national Decision-makers (M32, AWI) – Tailored guidance for regional planning.">
+            <span class="cell-text">D7.6: Policy Brief (Regional)</span>
+          </td>
+          <td data-fulltext="Translates complex scientific findings into actionable local policy for sustainable community development.">
+            <span class="cell-text">Actionable, Regional</span>
+          </td>
+          <td data-fulltext="Integrate with local governance structures; formalize planning processes; support evidence-based policies.">
+            <span class="cell-text">Integrate, Formalize, Support</span>
+          </td>
+          <td data-fulltext="Integrate the brief’s recommendations into regional strategic planning processes.">
+            <span class="cell-text">Integrate into Planning</span>
+          </td>
+          <td data-fulltext="Regional governance bodies, Arctic Mayors’ Forum, Indigenous councils.">
+            <span class="cell-text">Regional Authorities</span>
+          </td>
+        </tr>
+        <tr class="wp-7">
+          <td data-fulltext="D7.9: Policy Brief for Sub-national Decision-makers (M42, AWI) – Actionable insights for local decision-making.">
+            <span class="cell-text">D7.9: Policy Brief (Local)</span>
+          </td>
+          <td data-fulltext="Provides evidence-based recommendations to guide strategic local and regional policymaking.">
+            <span class="cell-text">Evidence-based, Strategic</span>
+          </td>
+          <td data-fulltext="Embed briefs in ongoing strategic frameworks; facilitate integration into regional decision-making; secure support.">
+            <span class="cell-text">Embed, Facilitate, Secure</span>
+          </td>
+          <td data-fulltext="Use the brief as a guiding document for strategic planning and resource allocation at the local level.">
+            <span class="cell-text">Guide Planning</span>
+          </td>
+          <td data-fulltext="Local/regional authorities, community councils, SAON.">
+            <span class="cell-text">Local Authorities</span>
+          </td>
+        </tr>
+        <!-- Work Package 8 -->
+        <tr class="wp-8">
+          <td data-fulltext="D8.1: Applications for GEO Initiative to GEO Program Board – Formalizes Arctic-GEOSS within GEO.">
+            <span class="cell-text">D8.1: GEO Initiative App</span>
+          </td>
+          <td data-fulltext="Recognizes and formalizes Arctic-GEOSS as a key initiative, enhancing collaboration and long-term commitment.">
+            <span class="cell-text">Formal, Recognized</span>
+          </td>
+          <td data-fulltext="Maintain active GEO engagement; integrate Arctic objectives; coordinate with SAON.">
+            <span class="cell-text">Maintain, Integrate, Coordinate</span>
+          </td>
+          <td data-fulltext="Co-host regular review meetings with GEO and SAON to evaluate progress and adapt priorities.">
+            <span class="cell-text">Co-host Reviews</span>
+          </td>
+          <td data-fulltext="SAON, GEO, AMAP.">
+            <span class="cell-text">SAON, GEO, AMAP</span>
+          </td>
+        </tr>
+        <tr class="wp-8">
+          <td data-fulltext="D8.2: Roadmap for further evolution of the pan-AOSS – Strategic guideline for future investment.">
+            <span class="cell-text">D8.2: pan-AOSS Roadmap</span>
+          </td>
+          <td data-fulltext="Identifies opportunities to enhance integration of diverse observation systems, including scientific and indigenous inputs.">
+            <span class="cell-text">Strategic, Inclusive</span>
+          </td>
+          <td data-fulltext="Engage key stakeholders; integrate recommendations into SAON ROADS; update periodically.">
+            <span class="cell-text">Engage, Integrate, Update</span>
+          </td>
+          <td data-fulltext="Conduct a follow-up Arctic Observing Summit session to operationalize roadmap recommendations.">
+            <span class="cell-text">Conduct Summit Session</span>
+          </td>
+          <td data-fulltext="NPI, SAON, EPCO, Indigenous organizations.">
+            <span class="cell-text">NPI, SAON, EPCO</span>
+          </td>
+        </tr>
+        <tr class="wp-8">
+          <td data-fulltext="D8.3: Strengthening European Capabilities – Enhances visibility and interoperability of European Arctic observations.">
+            <span class="cell-text">D8.3: Euro Capabilities</span>
+          </td>
+          <td data-fulltext="Showcases European observing capabilities, enhancing collaboration among national and international agencies.">
+            <span class="cell-text">Visibility, Interoperability</span>
+          </td>
+          <td data-fulltext="Institutionalize collaborations; formalize MoUs; update capability assessments annually.">
+            <span class="cell-text">Institutionalize, Formalize, Update</span>
+          </td>
+          <td data-fulltext="Establish annual workshops hosted jointly by Copernicus and national agencies.">
+            <span class="cell-text">Establish Workshops</span>
+          </td>
+          <td data-fulltext="EEA, Copernicus, national ice/weather services.">
+            <span class="cell-text">EEA, Copernicus</span>
+          </td>
+        </tr>
+        <tr class="wp-8">
+          <td data-fulltext="D8.5: Final Synthesis Report on a pan-AOSS – Comprehensive summary of project achievements.">
+            <span class="cell-text">D8.5: Synthesis Report</span>
+          </td>
+          <td data-fulltext="Acts as a definitive reference on integrated Arctic observation systems, summarizing methodologies and outcomes.">
+            <span class="cell-text">Comprehensive, Definitive</span>
+          </td>
+          <td data-fulltext="Disseminate findings widely; integrate key insights into SAON operational practices; present at international forums.">
+            <span class="cell-text">Disseminate, Integrate, Present</span>
+          </td>
+          <td data-fulltext="Present synthesis findings at the next Arctic Science Ministerial and integrate into SAON’s ROADS framework.">
+            <span class="cell-text">Present Findings</span>
+          </td>
+          <td data-fulltext="AWI, SAON, EPCO, international scientific networks.">
+            <span class="cell-text">AWI, SAON, EPCO</span>
+          </td>
+        </tr>
+        <!-- Work Package 9 -->
+        <tr class="wp-9">
+          <td data-fulltext="D9.5: Report on the Arctic PASSION School – Provides comprehensive training and capacity building for next-generation Arctic researchers.">
+            <span class="cell-text">D9.5: PASSION School Report</span>
+          </td>
+          <td data-fulltext="Promotes an informed new generation of Arctic researchers and decision-makers, ensuring future sustainability.">
+            <span class="cell-text">Training, Capacity Building</span>
+          </td>
+          <td data-fulltext="Institutionalize within educational frameworks; establish permanent online training resources; update materials regularly.">
+            <span class="cell-text">Institutionalize, Online Resources, Update</span>
+          </td>
+          <td data-fulltext="Plan and organize the next PASSION School session in collaboration with SAON and academic institutions.">
+            <span class="cell-text">Plan Next Session</span>
+          </td>
+          <td data-fulltext="AWI, APECS, SAON, Arctic research universities.">
+            <span class="cell-text">AWI, APECS, SAON</span>
+          </td>
+        </tr>
+        <tr class="wp-9">
+          <td data-fulltext="D9.6: Multimedia platform ‘Arctic Window’ – Engaging, interactive platform showcasing project results and indigenous knowledge.">
+            <span class="cell-text">D9.6: Arctic Window</span>
+          </td>
+          <td data-fulltext="Fosters user engagement by integrating scientific data with indigenous perspectives and project outputs in an interactive format.">
+            <span class="cell-text">Interactive, Engaging</span>
+          </td>
+          <td data-fulltext="Secure sustainable hosting; update multimedia content regularly; integrate with established data portals.">
+            <span class="cell-text">Secure, Update, Integrate</span>
+          </td>
+          <td data-fulltext="Formalize a hosting agreement with Copernicus or SAON to ensure ongoing technical and financial maintenance.">
+            <span class="cell-text">Formalize Agreement</span>
+          </td>
+          <td data-fulltext="GRID-Arendal, Copernicus, SAON.">
+            <span class="cell-text">GRID-Arendal, Copernicus</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+  
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Arctic PASSION Horizon 2020 Project</p>
+  </footer>
+</body>
+</html>
